@@ -219,4 +219,5 @@ Built from the `FinSim_Ideation_Blueprint.docx` with design influence from Stard
 
 ## License
 
-Private for now. Add a proper license before launching publicly.
+MIT License
+Copyright (c) 2026 Charanjot Singh
