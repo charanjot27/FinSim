@@ -167,7 +167,7 @@ The file to expand: `src/data/echoScenarios.ts`. Each scenario has:
 - `heroName`, `heroOutcome`, `lesson` — the reveal content
 - `isFraud` — if true, the reveal shows in red
 
-## Mira AI Coach (Gemini-powered, optional)
+## Mira AI Coach (Gemini-powered)
 
 Mira replaces the canned bias-detection messages with personalized 1–2 sentence coaching pulled from a Cloud Function that calls Gemini 2.5 Flash. It's served by `functions/src/index.ts` (Firebase Functions v2) and consumed client-side by `src/systems/MiraCoach.ts`.
 
@@ -179,30 +179,8 @@ When the user is signed in and the function is reachable, the coach toast initia
 3. SHA-256 cache on bucketized inputs — repeat triggers from the same player are free for 1h server-side and 30min client-side.
 4. 240-char hard cap on output (≈ 60 tokens).
 
-**Setup:**
 
-```bash
-# 1. Install function deps
-cd functions && npm install && cd ..
 
-# 2. Set the Gemini key (one time)
-firebase functions:secrets:set GEMINI_API_KEY
-# paste a key from https://aistudio.google.com/apikey
-
-# 3. Deploy
-firebase deploy --only functions
-```
-
-**Local development with the emulator:**
-
-```bash
-cd functions && npm run serve   # boots functions emulator on :5001
-# In a second shell:
-echo "VITE_FUNCTIONS_EMULATOR=true" >> .env
-npm run dev
-```
-
-The free Gemini tier covers thousands of coach calls per day. To monitor usage: Cloud Console → Functions → `miraCoach` → Logs.
 
 ## Known limitations of this alpha
 
@@ -212,10 +190,6 @@ The free Gemini tier covers thousands of coach calls per day. To monitor usage: 
 - Only 2 districts playable — Dalal Street routes through Wall Street scene
 - Mobile controls are keyboard-only — needs virtual joystick
 - No sound yet — add `Phaser.Sound` when you have audio assets
-
-## Credits / inspiration
-
-Built from the `FinSim_Ideation_Blueprint.docx` with design influence from Stardew Valley (movement feel), Bloomberg Terminal (chart density), and The Big Short (Echo Mode narrative structure).
 
 ## License
 
