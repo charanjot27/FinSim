@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npx vite build)",
+      "Bash(lsof -iTCP:3000 -sTCP:LISTEN)",
+      "Bash(ls /Users/charanjotsingh/Downloads/finsim-project/*.html /Users/charanjotsingh/Downloads/finsim-project/public)",
+      "Bash(sips -s format jpeg /Users/charanjotsingh/Desktop/FinalResume.pdf --out /Users/charanjotsingh/Downloads/finsim-project/public/assets/founder.jpg)",
+      "Bash(mdls -name kMDItemNumberOfPages /Users/charanjotsingh/Desktop/FinalResume.pdf)",
+      "Bash(python3:*)",
+      "Bash(/usr/bin/python3:*)",
+      "Bash(sips --getProperty pdfPageCount /Users/charanjotsingh/Desktop/FinalResume.pdf)",
+      "Bash(sips -s pdfPageNumber 2 -s format jpeg /Users/charanjotsingh/Desktop/FinalResume.pdf --out /Users/charanjotsingh/Downloads/finsim-project/public/assets/founder.jpg)",
+      "Bash(/Applications/Preview.app/Contents/MacOS/Preview --version)",
+      "Bash(brew list)",
+      "Bash(sips -Z 800 -s format png -s formatOptions best /Users/charanjotsingh/Downloads/finsim-project/public/assets/finsim-logo.png --out /tmp/logo-resized.png)",
+      "Bash(ls /Users/charanjotsingh/Downloads/finsim-project/README*.md)",
+      "Bash(ls /Users/charanjotsingh/Downloads/finsim-project/*.html /Users/charanjotsingh/Downloads/finsim-project/src/styles/)",
+      "Bash(wc -l /Users/charanjotsingh/Downloads/finsim-project/src/scenes/*.ts /Users/charanjotsingh/Downloads/finsim-project/src/scenes/utils/*.ts /Users/charanjotsingh/Downloads/finsim-project/src/systems/*.ts /Users/charanjotsingh/Downloads/finsim-project/src/data/*.ts /Users/charanjotsingh/Downloads/finsim-project/src/entities/*.ts /Users/charanjotsingh/Downloads/finsim-project/src/ui/*.ts /Users/charanjotsingh/Downloads/finsim-project/src/main.ts)",
+      "Bash(npx --prefix /Users/charanjotsingh/Downloads/finsim-project tsc --noEmit --project /Users/charanjotsingh/Downloads/finsim-project/tsconfig.json)",
+      "Bash(gh auth status)",
+      "Bash(git init -b main)",
+      "Bash(git config user.email)",
+      "Bash(git config user.name)",
+      "Bash(git add -A)"
+    ]
+  }
+}

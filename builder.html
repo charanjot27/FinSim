@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About the Builder — FinSim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/ui/builder.css" />
+</head>
+<body class="page-builder">
+  <div class="page-bg-aurora" aria-hidden="true">
+    <span class="aurora aurora-1"></span>
+    <span class="aurora aurora-2"></span>
+    <span class="aurora aurora-3"></span>
+  </div>
+
+  <nav class="page-nav">
+    <a class="page-logo" href="/">FINSIM</a>
+    <div class="page-nav-links">
+      <a href="/" class="page-nav-link">Home</a>
+      <a href="/product.html" class="page-nav-link">Product</a>
+      <a href="/demo.html" class="page-nav-link">Demo</a>
+    </div>
+  </nav>
+
+  <main class="builder-wrap">
+
+    <!-- ───── Hero ───── -->
+    <section class="builder-hero" data-reveal>
+      <div class="builder-photo-frame">
+        <img
+          src="/assets/founder.jpg"
+          alt="Charanjot Singh — founder of FinSim"
+          class="builder-photo-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+        />
+        <div class="builder-photo-placeholder" aria-hidden="true" style="display:none;">
+          <span class="bp-initials">CS</span>
+          <span class="bp-tag">Founder</span>
+        </div>
+        <span class="builder-photo-ring"></span>
+        <span class="builder-photo-ring builder-photo-ring-2"></span>
+        <span class="builder-photo-glow"></span>
+      </div>
+
+      <div class="builder-hero-meta">
+        <span class="builder-kicker">About the builder</span>
+        <h1 class="builder-name">
+          <span class="reveal-char-wrap">Charanjot Singh</span>
+        </h1>
+        <p class="builder-sub">
+          Founder &amp; sole developer of <b>FinSim</b> &middot;
+          2nd-year B.Tech, <b>NIT Jalandhar</b> &middot;
+          Self-taught trader who lost money the hard way so you don&rsquo;t have to.
+        </p>
+        <div class="builder-badges">
+          <span class="builder-badge">NIT Jalandhar</span>
+          <span class="builder-badge">JEE Main &middot; Top 1&#37;</span>
+          <span class="builder-badge">HackMol 6.0 &middot; 4th</span>
+          <span class="builder-badge">Builder &middot; 0 &rarr; 1</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Pull-quote ───── -->
+    <blockquote class="builder-quote" data-reveal>
+      &ldquo;The cheapest tuition in the market is the one you pay in a simulator.
+      Unfortunately, I didn&rsquo;t find one &mdash; so I built it.&rdquo;
+      <cite>&mdash; Charanjot, after the third margin call</cite>
+    </blockquote>
+
+    <!-- ───── The Story ───── -->
+    <section class="builder-story">
+      <h2 class="story-h" data-reveal>Why I built FinSim</h2>
+
+      <p class="story-lede" data-reveal>
+        I&rsquo;m a second-year engineering student at <b>NIT Jalandhar</b>. I didn&rsquo;t grow
+        up in a finance family. Everything I know about markets I learned the way most
+        Indian retail traders learn it &mdash; by losing money on Zerodha at 2 a.m. while
+        telling my parents I was &ldquo;just studying for endsems.&rdquo;
+      </p>
+
+      <article class="story-chapter" data-reveal>
+        <span class="story-num">01</span>
+        <div>
+          <h3>The WhatsApp tip</h3>
+          <p>
+            It started in my first semester. A senior&rsquo;s friend dropped a small-cap ticker
+            in a hostel WhatsApp group &mdash; <em>&ldquo;Target 2x in 2 weeks, bhai, pakka.&rdquo;</em>
+            I put in &#8377;18,000 &mdash; basically my entire semester&rsquo;s pocket money.
+            The stock went up 14&#37; in two days. I thought I&rsquo;d cracked it.
+            On day four it hit lower circuit. Day five, another lower circuit.
+            I couldn&rsquo;t even sell. I watched &#8377;18,000 become &#8377;6,400 in a week.
+            I didn&rsquo;t know what a <b>stop-loss</b> was. Nobody had told me.
+          </p>
+        </div>
+      </article>
+
+      <article class="story-chapter" data-reveal>
+        <span class="story-num">02</span>
+        <div>
+          <h3>Paper trading felt&hellip; fake</h3>
+          <p>
+            After the loss I did what every YouTube video tells you &mdash; <em>&ldquo;paper trade
+            for 90 days.&rdquo;</em> I opened TradingView&rsquo;s demo, set up a &#8377;1,00,000
+            fake account, started clicking. Within a week I was &lsquo;up&rsquo; 40&#37; because
+            I was taking absurd positions I&rsquo;d never take with real money. There was no
+            fear. The whole exercise felt like theatre. I closed the tab and went back to
+            real capital, more confident than I had any right to be.
+          </p>
+        </div>
+      </article>
+
+      <article class="story-chapter" data-reveal>
+        <span class="story-num">03</span>
+        <div>
+          <h3>The Utkansh night</h3>
+          <p>
+            During <b>Utkansh</b>, NIT Jalandhar&rsquo;s biggest inter-college cultural fest, I
+            ended up backstage helping with the photography club. Around 1 a.m., between two
+            band sets, a CSE senior started talking about <b>algo trading</b> &mdash; Python
+            bots, Zerodha Kite Connect, mean-reversion on Bank Nifty. He made it sound like a
+            printing press. I went back to BH-1 hostel and spent the next three weekends
+            learning pandas, building an EMA-crossover strategy, backtesting on five years
+            of historical data. The backtest showed <b>+87&#37; CAGR</b>.
+            I was 19. I thought I&rsquo;d found cheat code.
+          </p>
+        </div>
+      </article>
+
+      <article class="story-chapter" data-reveal>
+        <span class="story-num">04</span>
+        <div>
+          <h3>Live trading. Full loss.</h3>
+          <p>
+            I deployed with &#8377;42,000 of saved tuition money. In three weeks the bot
+            took 61 trades and my account was down to &#8377;11,700. The backtest had been
+            curve-fit to the past. Slippage, brokerage, and one bad gap morning on Bank
+            Nifty ate every edge I thought I had. I&rsquo;d been <em>this</em> careful &mdash; read
+            the papers, optimised Sharpe, even added a volatility filter. None of it
+            mattered, because I&rsquo;d never <b>felt</b> a real drawdown before I&rsquo;d
+            taken one.
+          </p>
+        </div>
+      </article>
+
+      <article class="story-chapter" data-reveal>
+        <span class="story-num">05</span>
+        <div>
+          <h3>The realisation</h3>
+          <p>
+            That&rsquo;s when it hit me. You can&rsquo;t learn <b>risk management</b> from a YouTube
+            video. You can&rsquo;t learn <b>position sizing</b> from a PDF. You can&rsquo;t learn
+            to spot a <b>rug-pull</b> from an Investopedia article. All of this is
+            <em>muscle memory</em> &mdash; and muscle memory needs repetition with real
+            consequences. Paper trading has no consequences. Real trading has consequences
+            too expensive to pay tuition for.
+          </p>
+          <p>
+            There had to be a middle ground. Something that <b>felt</b> real &mdash; live
+            prices, live news, behavioural traps, bot traders competing against you &mdash;
+            but where the only thing you lose is your pride on a leaderboard.
+            I looked. That product didn&rsquo;t exist. Not in India, not anywhere, not free.
+          </p>
+          <p>So I started building <b>FinSim</b>.</p>
+        </div>
+      </article>
+
+      <article class="story-chapter" data-reveal>
+        <span class="story-num">06</span>
+        <div>
+          <h3>What this is, what it isn&rsquo;t</h3>
+          <p>
+            FinSim is not a game pretending to teach finance. It&rsquo;s a finance simulator
+            shaped like a game because that&rsquo;s the only format that makes you
+            <em>return tomorrow</em>. Every district is a lesson I wish I&rsquo;d had &mdash;
+            <b>Scam Slum</b> for the WhatsApp tip I fell for, <b>Wall Street</b> for the
+            stop-loss nobody taught me, <b>Quant Quarter</b> for the backtest trap I walked
+            into, <b>Vegas Vice</b> for the dopamine loop I didn&rsquo;t know I was
+            addicted to.
+          </p>
+          <p>
+            If this project saves even one 19-year-old from the &#8377;30,000 mistake I
+            made, it was worth every one of the six-hundred-odd hours I&rsquo;ve put into it
+            so far. That&rsquo;s the whole pitch.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ───── Stats strip ───── -->
+    <section class="builder-stats" data-reveal>
+      <div class="stat-cell"><div class="stat-num" data-count="600">0</div><div class="stat-lbl">hours shipped</div></div>
+      <div class="stat-cell"><div class="stat-num" data-count="75">0</div><div class="stat-lbl">TS modules</div></div>
+      <div class="stat-cell"><div class="stat-num" data-count="6">0</div><div class="stat-lbl">districts</div></div>
+      <div class="stat-cell"><div class="stat-num" data-count="15">0</div><div class="stat-lbl">crashes replayed</div></div>
+      <div class="stat-cell"><div class="stat-num" data-count="1">0</div><div class="stat-lbl">solo founder</div></div>
+    </section>
+
+    <!-- ───── Side projects strip ───── -->
+    <section class="builder-other" data-reveal>
+      <h2>Other things I&rsquo;ve built</h2>
+      <div class="other-grid">
+        <div class="other-card">
+          <h3>HackLevio</h3>
+          <p>Top 16 at <em>Cheaper Marketless 6</em> &mdash; AI/UI for the absurd.</p>
+        </div>
+        <div class="other-card">
+          <h3>BotQVita</h3>
+          <p>4th rank at HackMol 6.0 &mdash; AI injury-detection &amp; recovery platform.</p>
+        </div>
+        <div class="other-card">
+          <h3>Social Media Analysis Tool</h3>
+          <p>Top 100 India, Level SuperMind &mdash; LangChain + DataStax dashboard.</p>
+        </div>
+        <div class="other-card">
+          <h3>FitnessSeek</h3>
+          <p>Google Solutions Challenge &mdash; AI wellness combining fitness + Ayurveda + yoga.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Contact ───── -->
+    <section class="builder-contact" data-reveal>
+      <h2>Reach out</h2>
+      <p>
+        If you&rsquo;ve lost money the same way &mdash; or if you teach finance and want to
+        plug FinSim into your course &mdash; I&rsquo;d love to hear from you.
+      </p>
+      <div class="builder-links">
+        <a class="builder-cta" href="mailto:charanjot.finsim@gmail.com">Email me</a>
+        <a class="builder-cta builder-cta-ghost" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a class="builder-cta builder-cta-ghost" href="/">Back to the game &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-foot">
+    <span>FinSim &middot; The Financial Metaverse &middot; built solo, in public</span>
+  </footer>
+
+  <script>
+    // Reveal-on-scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+    }, { threshold: 0.16 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+    // Stats counter
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = +el.dataset.count;
+        const dur = 1100; const start = performance.now();
+        const tick = (t) => {
+          const p = Math.min(1, (t - start) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased) + (target >= 100 ? '+' : '');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.stat-num[data-count]').forEach(el => cio.observe(el));
+  </script>
+</body>
+</html>

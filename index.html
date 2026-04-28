@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>FinSim — The Financial Metaverse</title>
+  <link rel="stylesheet" href="/src/ui/styles.css" />
+  <link rel="stylesheet" href="/src/ui/landing.css" />
+</head>
+<body>
+  <!-- Brass scroll progress bar -->
+  <div class="fin-scroll-progress" id="fin-scroll-progress" aria-hidden="true"></div>
+
+  <!-- Landing Page Redesign -->
+  <div id="landing-page" class="landing-page">
+    <nav class="landing-nav">
+      <a href="#" class="landing-logo" aria-label="FinSim home">
+        <span class="landing-logo-glyph" aria-hidden="true">F</span>
+        <span class="landing-logo-text">FINSIM</span>
+      </a>
+      <div class="landing-links">
+        <a class="landing-link" href="/builder.html" target="_blank" rel="noopener">Builder Story</a>
+        <a class="landing-link" href="/product.html" target="_blank" rel="noopener">Product</a>
+        <a class="landing-link" href="https://github.com" target="_blank" rel="noopener">Star on Github</a>
+        <a class="landing-link" href="/demo.html" target="_blank" rel="noopener">Demo</a>
+        <a class="landing-link" href="/leaderboard.html" target="_blank" rel="noopener">Leaderboard</a>
+      </div>
+      <div class="landing-socials">
+        <!-- Twitter/X SVG -->
+        <a href="#" aria-label="Twitter">
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.059z"/></svg>
+        </a>
+        <!-- GitHub SVG -->
+        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+      </div>
+    </nav>
+
+    <div class="hero-section">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <!-- Floating finance tokens drifting up -->
+      <div class="fin-floaters" aria-hidden="true">
+        <span>₹</span><span>$</span><span>€</span><span>¥</span><span>₿</span>
+        <span>₹</span><span>$</span><span>£</span><span>%</span><span>₿</span>
+      </div>
+      <div class="hero-content">
+        <div class="hero-brand-wrap">
+          <img src="/assets/finsim-logo.png" class="hero-brand-logo" alt="FinSim official game logo">
+        </div>
+        <h1 class="hero-title">The Financial Metaverse</h1>
+        <p class="hero-caption">Explore realistic market districts, practice with virtual money, and build real-world confidence before placing your first live trade.</p>
+
+        <div class="hero-avatar-container">
+          <div class="hero-avatar-ring"></div>
+          <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&q=80&w=800" class="hero-avatar" style="object-position: top;" alt="Player deciding a learning path">
+          <div class="thought-bubble tb-1">Go to Wall Street?</div>
+          <div class="thought-bubble tb-2">Try Crypto Cove?</div>
+          <div class="thought-bubble tb-3">Learn Scam Spotting?</div>
+          <div class="thought-bubble tb-4">Start with Dalal Street?</div>
+        </div>
+
+        <div class="hero-cta-row">
+          <button id="btn-play-now" class="btn-play-now">Play Now</button>
+          <a href="#product" class="btn-secondary">Watch Experience</a>
+        </div>
+        <div class="hero-meta">
+          <span>6 Districts</span>
+          <span>Real Concepts</span>
+          <span>Safe Practice</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee strip — between hero and stats -->
+    <div class="fin-marquee" aria-hidden="true">
+      <div class="fin-marquee-track">
+        <span>REAL DATA</span><span>•</span>
+        <span>REAL NEWS</span><span>•</span>
+        <span>BIAS DETECTOR</span><span>•</span>
+        <span>15 HISTORIC CRASHES</span><span>•</span>
+        <span>6 DISTRICTS</span><span>•</span>
+        <span>FREE FOREVER</span><span>•</span>
+        <span>BUILT IN INDIA</span><span>•</span>
+        <span>REAL DATA</span><span>•</span>
+        <span>REAL NEWS</span><span>•</span>
+        <span>BIAS DETECTOR</span><span>•</span>
+        <span>15 HISTORIC CRASHES</span><span>•</span>
+        <span>6 DISTRICTS</span><span>•</span>
+        <span>FREE FOREVER</span><span>•</span>
+        <span>BUILT IN INDIA</span><span>•</span>
+      </div>
+    </div>
+
+    <!-- Numbers Animation Section -->
+    <div id="product" class="stats-section">
+      <div class="stat-item">
+        <div><span class="stat-number" data-target="85">0</span><span class="stat-percent">%</span></div>
+        <span class="stat-label">Lack Financial Literacy</span>
+      </div>
+      <div class="stat-item">
+        <div><span class="stat-number" data-target="90">0</span><span class="stat-percent">%</span></div>
+        <span class="stat-label">Find Blogs/Videos Confusing</span>
+      </div>
+      <div class="stat-item">
+        <div><span class="stat-number" data-target="100">0</span><span class="stat-percent">%</span></div>
+        <span class="stat-label">Can Get Practical Knowledge Here</span>
+      </div>
+    </div>
+
+    <div id="builder" class="features-container">
+      <div class="feature-row">
+        <div class="feature-visual">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=1000" class="feature-img" alt="Financial institutions and market screens">
+        </div>
+        <div class="feature-text">
+          <h2>Real-World Banking & Markets</h2>
+          <p>Immerse yourself in deeply simulated districts like Wall Street and Dalal Street. Understand how institutional money moves, how banks operate, and the core mechanics driving global financial systems.</p>
+        </div>
+      </div>
+
+      <div id="demo" class="feature-row reverse">
+        <div class="feature-visual">
+          <div class="mentor-grid">
+            <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&q=80&w=400" alt="Mentor 1" class="mentor-img" style="object-position: top;">
+            <img src="https://images.unsplash.com/photo-1531297172864-45dc60645830?auto=format&fit=crop&q=80&w=400" alt="Mentor 2" class="mentor-img">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=400" alt="Mentor 3" class="mentor-img">
+            <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?auto=format&fit=crop&q=80&w=400" alt="Mentor 4" class="mentor-img">
+          </div>
+        </div>
+        <div class="feature-text">
+          <h2>Guided Virtual Tours</h2>
+          <p>Embark on a virtual tour where dedicated mentors wait at each map point. From "The Big Bull" to "Warren-bot", they provide crucial insights and guide you through complex trading mechanisms and spotting scams.</p>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-visual">
+          <div class="mock-portfolio">
+            <div class="mock-portfolio-header">
+              <span class="mock-portfolio-title">Your Holdings</span>
+              <span class="mock-portfolio-value">₹24,500.00</span>
+            </div>
+            <div class="mock-asset-list">
+              <div class="mock-asset">
+                <span><span class="mock-asset-name">Reliance Ind.</span><span class="mock-asset-ticker">RELIANCE</span></span>
+                <span class="mock-asset-perf pos">▲ 12.4%</span>
+              </div>
+              <div class="mock-asset">
+                <span><span class="mock-asset-name">Bitcoin</span><span class="mock-asset-ticker">BTC</span></span>
+                <span class="mock-asset-perf pos">▲ 5.2%</span>
+              </div>
+              <div class="mock-asset">
+                <span><span class="mock-asset-name">Dogecoin</span><span class="mock-asset-ticker">DOGE</span></span>
+                <span class="mock-asset-perf neg">▼ 4.1%</span>
+              </div>
+              <div class="mock-asset">
+                <span><span class="mock-asset-name">Tata Motors</span><span class="mock-asset-ticker">TATAMOTORS</span></span>
+                <span class="mock-asset-perf pos">▲ 8.9%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-text">
+          <h2>Your Master Portfolio</h2>
+          <p>Keep track of everything you buy or sell. A comprehensive view of your holdings, P&L, and transaction history wrapped in a sleek, dark-mode terminal. Build wealth safely.</p>
+        </div>
+      </div>
+
+      <div id="leaderboard-section" class="feature-row reverse">
+        <div class="feature-visual">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000" class="feature-img" alt="Time machine market simulation concept">
+        </div>
+        <div class="feature-text">
+          <h2>Time Machine (Echo Mode)</h2>
+          <p>Travel back to historic market crashes and meme-stock rallies. Test your nerve in past scenarios to see if you could survive the dot-com bubble or the 2008 financial crisis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Intersection Observer for scroll animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      document.querySelectorAll('.feature-row').forEach(row => {
+        observer.observe(row);
+      });
+
+      // Counter animation logic
+      const counters = document.querySelectorAll('.stat-number');
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = +entry.target.getAttribute('data-target');
+            let count = 0;
+            const inc = target / 50; // duration control
+            const updateCount = () => {
+              count += inc;
+              if (count < target) {
+                entry.target.innerText = Math.ceil(count);
+                requestAnimationFrame(updateCount);
+              } else {
+                entry.target.innerText = target;
+              }
+            };
+            updateCount();
+            countObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => countObserver.observe(counter));
+
+      // Brass scroll progress bar — listens on the actual scroll container
+      const progressBar = document.getElementById('fin-scroll-progress');
+      const nav = document.querySelector('.landing-nav');
+      const scroller = document.querySelector('.landing-page') || document.documentElement;
+      const onScroll = () => {
+        const top = scroller.scrollTop;
+        const max = scroller.scrollHeight - scroller.clientHeight;
+        const pct = max > 0 ? (top / max) * 100 : 0;
+        if (progressBar) progressBar.style.width = pct + '%';
+        if (nav) nav.classList.toggle('is-scrolled', top > 16);
+      };
+      scroller.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Stats section reveal trigger
+      const statsSection = document.querySelector('.stats-section');
+      if (statsSection) {
+        new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              statsSection.classList.add('in-view');
+            }
+          });
+        }, { threshold: 0.3 }).observe(statsSection);
+      }
+
+      // Cursor spotlight on hero
+      const hero = document.querySelector('.hero-section');
+      if (hero && window.matchMedia('(hover: hover)').matches) {
+        hero.addEventListener('pointermove', (e) => {
+          const r = hero.getBoundingClientRect();
+          const mx = ((e.clientX - r.left) / r.width) * 100;
+          const my = ((e.clientY - r.top) / r.height) * 100;
+          hero.style.setProperty('--mx', mx + '%');
+          hero.style.setProperty('--my', my + '%');
+        });
+      }
+
+      // Parallax tilt on thought bubbles
+      const bubbles = document.querySelectorAll('.thought-bubble');
+      const avatarBox = document.querySelector('.hero-avatar-container');
+      if (avatarBox) {
+        avatarBox.addEventListener('pointermove', (e) => {
+          const r = avatarBox.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          bubbles.forEach((b, i) => {
+            const k = (i + 1) * 6;
+            b.style.transform = `translate(${px * k}px, ${py * k}px)`;
+          });
+        });
+        avatarBox.addEventListener('pointerleave', () => {
+          bubbles.forEach(b => { b.style.transform = ''; });
+        });
+      }
+    });
+  </script>
+
+  <!-- Metropolitan skyline — CSS-only parallax, fades in behind everything -->
+  <div id="skyline" class="skyline" aria-hidden="true">
+    <div class="skyline-sky"></div>
+    <div class="skyline-stars"></div>
+    <div class="skyline-bridge"></div>
+    <div class="skyline-far"></div>
+    <div class="skyline-near"></div>
+    <div class="skyline-fog"></div>
+  </div>
+
+  <!-- Weather overlay — sits above the canvas, below HUD -->
+  <div id="weather" class="weather" aria-hidden="true">
+    <canvas class="weather-canvas"></canvas>
+    <div class="weather-sun"></div>
+    <div class="weather-overcast"></div>
+  </div>
+
+  <!-- Main game canvas container -->
+  <div id="game-container"></div>
+
+  <!-- UI Overlays -->
+  <div id="hud" class="hud hidden">
+    <div class="hud-left">
+      <div class="hud-item">
+        <span class="hud-label">₹</span>
+        <span id="hud-cash" class="hud-value">10,000</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Portfolio</span>
+        <span id="hud-portfolio" class="hud-value">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">District</span>
+        <span id="hud-district" class="hud-value">Scam Slum</span>
+      </div>
+    </div>
+    <div class="hud-right">
+      <div id="auth-bar" class="auth-bar">
+        <img id="auth-avatar" class="auth-avatar" alt=""/>
+        <span id="auth-label" class="auth-label">Local only</span>
+        <button id="auth-button" class="auth-btn">Sign in</button>
+      </div>
+      <div id="hud-bias-score" class="bias-badge hidden">
+        <span class="bias-label">⚠ Bias</span>
+      </div>
+      <div class="hud-menu-wrap">
+        <button id="btn-menu" class="hud-menu-trigger" aria-label="Open menu" aria-expanded="false">
+          <span class="hud-menu-dot"></span>
+          <span class="hud-menu-dot"></span>
+          <span class="hud-menu-dot"></span>
+        </button>
+        <div id="hud-menu" class="hud-menu" role="menu" hidden>
+          <button class="hud-menu-item" id="btn-learn" role="menuitem">
+            <span class="hud-menu-icon">📚</span>
+            <span class="hud-menu-text">Learn Hub<em>L</em></span>
+          </button>
+          <button class="hud-menu-item" id="btn-pro" role="menuitem">
+            <span class="hud-menu-icon">◆</span>
+            <span class="hud-menu-text">Pro Terminal<em>R</em></span>
+          </button>
+          <button class="hud-menu-item" id="btn-portfolio" role="menuitem">
+            <span class="hud-menu-icon">◰</span>
+            <span class="hud-menu-text">Portfolio<em>P</em></span>
+          </button>
+          <button class="hud-menu-item" id="btn-help" role="menuitem">
+            <span class="hud-menu-icon">?</span>
+            <span class="hud-menu-text">Help<em>H</em></span>
+          </button>
+          <button class="hud-menu-item" id="btn-leaderboard" role="menuitem">
+            <span class="hud-menu-icon">▲</span>
+            <span class="hud-menu-text">Leaderboard<em>B</em></span>
+          </button>
+          <button class="hud-menu-item" id="btn-map" role="menuitem">
+            <span class="hud-menu-icon">◎</span>
+            <span class="hud-menu-text">Map Hints<em>M</em></span>
+          </button>
+          <button class="hud-menu-item" id="btn-tour" role="menuitem">
+            <span class="hud-menu-icon">◉</span>
+            <span class="hud-menu-text">Guided Tour<em>T</em></span>
+          </button>
+          <button class="hud-menu-item" id="btn-bias-profile" role="menuitem">
+            <span class="hud-menu-icon">🧠</span>
+            <span class="hud-menu-text">Bias Profile<em>I</em></span>
+          </button>
+          <button class="hud-menu-item" id="btn-profile" role="menuitem">
+            <span class="hud-menu-icon">◐</span>
+            <span class="hud-menu-text">Profile</span>
+          </button>
+          <button class="hud-menu-item hud-menu-toggle" id="btn-hardmode" role="menuitemcheckbox" aria-checked="false">
+            <span class="hud-menu-icon">🔒</span>
+            <span class="hud-menu-text">Hard Mode<em>OFF</em></span>
+          </button>
+          <div class="hud-menu-div"></div>
+          <button class="hud-menu-item" id="btn-sound" role="menuitem">
+            <span class="hud-menu-icon">♪</span>
+            <span class="hud-menu-text">Sound</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Learn Hub (card-based real-world learning overlay) -->
+  <div id="learn-hub" class="learn-hub hidden"></div>
+
+  <!-- Coach Overlay (real-world takeaway toasts) -->
+  <div id="coach-overlay" class="coach-overlay"></div>
+
+  <!-- Onboarding (signup + avatar + name) -->
+  <div id="onboarding" class="onboarding hidden"></div>
+
+  <!-- Global Leaderboard -->
+  <div id="leaderboard" class="leaderboard hidden"></div>
+
+  <!-- Map Hints (stylised metropolitan map) -->
+  <div id="map-hints" class="map-hints hidden"></div>
+
+  <!-- Mentor-guided Tour -->
+  <div id="tour" class="tour hidden"></div>
+
+  <!-- Pro Terminal Modal -->
+  <div id="pro-terminal" class="modal pro-modal hidden">
+    <div class="modal-header pro-header">
+      <h2>⚡ Pro Trader Terminal</h2>
+      <button class="modal-close" id="pro-close">✕</button>
+    </div>
+    <div class="pro-tabs" id="pro-tabs"></div>
+    <div class="pro-body" id="pro-body"></div>
+  </div>
+
+  <!-- Dialogue Box -->
+  <div id="dialogue" class="dialogue hidden">
+    <button class="dialogue-close" id="dialogue-close" title="Close (Esc)" aria-label="Close dialogue">✕</button>
+    <div class="dialogue-speaker" id="dialogue-speaker">NPC</div>
+    <div class="dialogue-text-wrap" id="dialogue-text-wrap">
+      <div class="dialogue-text" id="dialogue-text"></div>
+      <div class="dialogue-skip-hint" id="dialogue-skip-hint">▸ click to skip</div>
+    </div>
+    <div class="dialogue-choices" id="dialogue-choices"></div>
+    <div class="dialogue-footer">
+      <span class="kbd-hint"><kbd>Esc</kbd> close</span>
+      <span class="kbd-hint"><kbd>Space</kbd> continue</span>
+      <span class="kbd-hint"><kbd>1-9</kbd> choice</span>
+    </div>
+  </div>
+
+  <!-- Trading Terminal Modal -->
+  <div id="trading-terminal" class="modal hidden">
+    <div class="modal-header">
+      <h2 id="terminal-title">Trading Terminal</h2>
+      <button class="modal-close" id="terminal-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="terminal-grid">
+        <div class="terminal-left">
+          <div class="stock-list" id="stock-list"></div>
+        </div>
+        <div class="terminal-right">
+          <div class="stock-header">
+            <div class="stock-name" id="stock-name">Select a stock</div>
+            <div class="stock-price" id="stock-price">—</div>
+            <div class="stock-change" id="stock-change"></div>
+          </div>
+          <div class="chart-container" id="chart-container">
+            <canvas id="price-chart" width="600" height="300"></canvas>
+          </div>
+          <div class="trade-controls pro-trade-controls">
+            <div class="trade-grid">
+              <label class="trade-lbl">Qty <input type="number" id="trade-qty" min="1" value="1" /></label>
+              <label class="trade-lbl">Stop-loss <input type="number" id="trade-stop" step="0.01" placeholder="required" /></label>
+              <label class="trade-lbl">Target <input type="number" id="trade-target" step="0.01" placeholder="optional" /></label>
+              <label class="trade-lbl">Risk % <input type="number" id="trade-risk" step="0.1" value="1" min="0.1" max="5" /></label>
+              <label class="trade-lbl">Source
+                <select id="trade-source">
+                  <option value="own">Own analysis</option>
+                  <option value="sec">SEC filing</option>
+                  <option value="transcript">Earnings call</option>
+                  <option value="reuters">Reuters/FT</option>
+                  <option value="twitter">Twitter/X</option>
+                  <option value="telegram">Telegram</option>
+                  <option value="whatsapp">WhatsApp tip</option>
+                </select>
+              </label>
+              <label class="trade-lbl">Order
+                <select id="trade-order">
+                  <option value="market">Market</option>
+                  <option value="limit">Limit</option>
+                  <option value="stop">Stop</option>
+                  <option value="bracket">Bracket (stop+target)</option>
+                </select>
+              </label>
+            </div>
+            <div id="risk-preview" class="risk-preview"></div>
+            <div class="trade-btns">
+              <button id="btn-buy" class="btn-trade btn-buy">Buy</button>
+              <button id="btn-sell" class="btn-trade btn-sell">Sell</button>
+            </div>
+          </div>
+          <div id="trade-result" class="trade-result"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal -->
+  <div id="portfolio-modal" class="modal hidden">
+    <div class="modal-header">
+      <h2>Your Portfolio</h2>
+      <button class="modal-close" id="portfolio-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="portfolio-summary">
+        <div class="summary-card">
+          <div class="summary-label">Cash</div>
+          <div class="summary-value" id="pf-cash">₹10,000</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-label">Holdings Value</div>
+          <div class="summary-value" id="pf-holdings-value">₹0</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-label">Total P&L</div>
+          <div class="summary-value" id="pf-pnl">₹0</div>
+        </div>
+      </div>
+      <table class="holdings-table">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Qty</th>
+            <th>Avg Price</th>
+            <th>Current</th>
+            <th>P&L</th>
+          </tr>
+        </thead>
+        <tbody id="holdings-body"></tbody>
+      </table>
+      <h3 style="margin-top:24px;">Transaction History</h3>
+      <table class="holdings-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Symbol</th>
+            <th>Side</th>
+            <th>Qty</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="transactions-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Echo Mode Modal -->
+  <div id="echo-modal" class="modal hidden">
+    <div class="modal-header">
+      <h2>🕰 Echo Mode — Time Machine</h2>
+      <button class="modal-close" id="echo-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="echo-content"></div>
+    </div>
+  </div>
+
+  <!-- Bias Alert Toast -->
+  <div id="bias-toast" class="toast hidden">
+    <div class="toast-icon">⚠</div>
+    <div class="toast-content">
+      <div class="toast-title" id="toast-title"></div>
+      <div class="toast-body" id="toast-body"></div>
+      <div class="toast-actions">
+        <button id="toast-proceed" class="toast-btn">Proceed Anyway</button>
+        <button id="toast-cancel" class="toast-btn toast-btn-primary">Take a Break</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help Modal -->
+  <div id="help-modal" class="modal hidden">
+    <div class="modal-header">
+      <h2>How to Play</h2>
+      <button class="modal-close" id="help-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <h3>Controls</h3>
+      <ul class="help-list">
+        <li><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> or Arrow Keys — Move</li>
+        <li><kbd>E</kbd> or <kbd>Space</kbd> — Interact with NPCs and buildings</li>
+        <li><kbd>Esc</kbd> — Close any open menu</li>
+      </ul>
+      <h3>Goal</h3>
+      <p>Your mother lost ₹2,00,000 to a WhatsApp scam. Explore Wealth City, learn finance across 8 districts, spot scams, and recover the family savings. Real market data. Real decisions. Real learning.</p>
+      <h3>Districts Available in Alpha</h3>
+      <ul class="help-list">
+        <li><strong>Scam Slum</strong> — Where you start. Learn to spot fraud.</li>
+        <li><strong>Wall Street</strong> — Trade US stocks with simulated real-time data.</li>
+        <li><strong>Dalal Street</strong> — Indian equities, Harshad Mehta lore.</li>
+        <li><strong>Crypto Cove</strong> — DeFi, rug pulls, AMM math.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div id="loading" class="loading">
+    <div class="loading-logo">FINSIM</div>
+    <div class="loading-subtitle">The Financial Metaverse</div>
+    <div class="loading-bar"><div class="loading-fill" id="loading-fill"></div></div>
+    <div class="loading-status" id="loading-status">Initializing...</div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

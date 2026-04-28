@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About the Product — FinSim</title>
+  <link rel="stylesheet" href="/src/ui/styles.css" />
+  <link rel="stylesheet" href="/src/ui/landing.css" />
+  <link rel="stylesheet" href="/src/ui/builder.css" />
+</head>
+<body class="page-product">
+  <nav class="page-nav">
+    <a class="page-logo" href="/">FINSIM</a>
+    <div class="page-nav-links">
+      <a href="/" class="page-nav-link">Home</a>
+      <a href="/builder.html" class="page-nav-link">The Builder</a>
+      <a href="/demo.html" class="page-nav-link">Demo</a>
+    </div>
+  </nav>
+
+  <main class="product-wrap">
+    <span class="product-kicker">About the product</span>
+    <h1 class="product-h1">A financial metaverse for the rest of us.</h1>
+    <p class="product-lede">
+      FinSim is a browser-based open-world RPG that teaches real finance through play.
+      Six districts, twenty-seven NPC dialogues, fifteen historic crashes to replay, a
+      real-time behavioural-bias detector, and a Firestore-backed leaderboard where you
+      stack up against bots and live players. No real money at risk. No fake lessons.
+    </p>
+
+    <section class="product-section">
+      <h2>Six districts, six curricula</h2>
+      <div class="product-grid">
+        <div class="product-card"><h3>Scam Slum</h3><p>Spot the pitch. Walk away from the guaranteed doubler.</p></div>
+        <div class="product-card"><h3>Wall Street</h3><p>Stop-losses, position sizing, the 1&#37; rule.</p></div>
+        <div class="product-card"><h3>Dalal Street</h3><p>Indian microstructure, volume before price, gap risk.</p></div>
+        <div class="product-card"><h3>Crypto Cove</h3><p>24/7 volatility, self-custody, rug-pull verification.</p></div>
+        <div class="product-card"><h3>Quant Quarter</h3><p>Sharpe, factor models, the backtest-honesty check.</p></div>
+        <div class="product-card"><h3>Vegas Vice</h3><p>Negative expectancy made viscerally obvious.</p></div>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>What makes it different</h2>
+      <div class="product-grid">
+        <div class="product-card"><h3>Real data, real news</h3><p>Live prices (Finnhub / Alpha Vantage), ticker-tagged headlines (Marketaux), macro (FRED), gas (Etherscan).</p></div>
+        <div class="product-card"><h3>Bias detector</h3><p>Overtrading, revenge trades, sunk-cost &mdash; caught in-session, not post-mortem.</p></div>
+        <div class="product-card"><h3>Echo Mode</h3><p>Replay 1987, 2008, LUNA, FTX. You decide; game reveals what actually happened.</p></div>
+        <div class="product-card"><h3>Guided tour</h3><p>Mira, a retired floor trader, walks you through every district stop by stop.</p></div>
+        <div class="product-card"><h3>Real leaderboard</h3><p>Firestore-backed. See live players + seeded bots on one board.</p></div>
+        <div class="product-card"><h3>Offline-first</h3><p>Every API has a curated fallback. Learning never breaks when you&rsquo;re offline.</p></div>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>Tech &amp; scale</h2>
+      <div class="product-grid">
+        <div class="product-card"><h3>Phaser 3 + TypeScript</h3><p>75 modules, strict types, Vite build, ~2.2 MB bundle.</p></div>
+        <div class="product-card"><h3>Firebase</h3><p>Google auth + Firestore for cloud save &amp; multiplayer leaderboard.</p></div>
+        <div class="product-card"><h3>DOM overlays</h3><p>Hybrid: Phaser for the world, DOM for every HUD and terminal &mdash; maximum UI flexibility.</p></div>
+        <div class="product-card"><h3>Singleton + pub/sub</h3><p>No state library. Every system notifies subscribers. Simple, debuggable, fast.</p></div>
+      </div>
+    </section>
+
+    <section class="product-section" style="text-align:center; margin-top:60px;">
+      <a class="builder-cta" href="/">Play now &rarr;</a>
+      <a class="builder-cta builder-cta-ghost" href="/builder.html">Meet the builder</a>
+    </section>
+  </main>
+
+  <footer class="page-foot">
+    <span>FinSim &middot; The Financial Metaverse</span>
+  </footer>
+</body>
+</html>
