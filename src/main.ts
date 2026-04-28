@@ -47,7 +47,7 @@ const coachOverlay = new CoachOverlay();
 const onboarding = new OnboardingOverlay();
 const leaderboard = new LeaderboardOverlay();
 const tour = new TourOverlay((sceneKey: string) => {
-  const active = game.scene.getScenes(true)[0];
+  const active = game!.scene.getScenes(true)[0];
   if (!active) return;
   if (active.scene.key === sceneKey) return;
   soundManager.play('portal');
@@ -57,7 +57,7 @@ const tour = new TourOverlay((sceneKey: string) => {
   });
 });
 const mapHints = new MapHints((sceneKey: string) => {
-  const active = game.scene.getScenes(true)[0];
+  const active = game!.scene.getScenes(true)[0];
   if (active) active.scene.start(sceneKey);
 });
 

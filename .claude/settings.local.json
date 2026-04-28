@@ -24,7 +24,10 @@
       "Bash(git init -b main)",
       "Bash(git config user.email)",
       "Bash(git config user.name)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git commit:*)",
+      "Bash(git remote add origin https://github.com/charanjot27/FinSim.git)",
+      "Bash(git push -u origin main)"
     ]
   }
 }
