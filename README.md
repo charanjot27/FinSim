@@ -182,14 +182,6 @@ When the user is signed in and the function is reachable, the coach toast initia
 
 
 
-## Known limitations of this alpha
-
-- No real API data yet — all prices are simulated client-side via GBM
-- No multiplayer yet — authentication is Google/Firebase only
-- Art is procedural — functional but not pretty
-- Only 2 districts playable — Dalal Street routes through Wall Street scene
-- Mobile controls are keyboard-only — needs virtual joystick
-- No sound yet — add `Phaser.Sound` when you have audio assets
 
 ## License
 
