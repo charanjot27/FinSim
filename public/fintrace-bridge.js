@@ -35,24 +35,24 @@
   function style() {
     var css = "" +
       "#ft-bar{position:fixed;right:14px;bottom:14px;z-index:99999;display:flex;gap:8px;font:13px ui-monospace,Menlo,Consolas,monospace}" +
-      "#ft-bar button{cursor:pointer;border-radius:9px;border:1px solid #2a323d;background:#161b22;color:#c9d1d9;padding:9px 13px}" +
-      "#ft-bar button:hover{border-color:#22d3ee;color:#fff}" +
-      "#ft-bar button.hot{border-color:#22d3ee;color:#22d3ee;box-shadow:0 0 14px rgba(34,211,238,.3)}" +
+      "#ft-bar button{cursor:pointer;border-radius:9px;border:1px solid #434d54;background:#2b3237;color:#e6e9ea;padding:9px 13px}" +
+      "#ft-bar button:hover{border-color:#FFFA00;color:#fff}" +
+      "#ft-bar button.hot{border-color:#FFFA00;color:#FFFA00;box-shadow:0 0 14px rgba(255,250,0,.3)}" +
       ".ft-ov{position:fixed;inset:0;background:rgba(6,9,13,.75);z-index:100000;display:flex;align-items:center;justify-content:center}" +
-      ".ft-modal{background:#161b22;border:1px solid #2a323d;border-radius:14px;padding:22px;max-width:460px;max-height:86vh;overflow:auto;color:#c9d1d9;font:13px ui-monospace,Menlo,Consolas,monospace}" +
-      ".ft-modal h2{color:#fff;margin:0 0 6px;font-size:18px}.ft-modal h2 b{color:#22d3ee}" +
-      ".ft-modal .sub{color:#7d8794;font-size:12px}" +
-      ".ft-modal label{display:block;color:#7d8794;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 5px}" +
-      ".ft-modal select,.ft-modal input,.ft-modal textarea{width:100%;background:#1b2028;border:1px solid #2a323d;color:#c9d1d9;border-radius:8px;padding:8px 10px;font:inherit}" +
-      ".ft-q{margin:10px 0}.ft-opt{display:block;width:100%;text-align:left;margin:4px 0;padding:8px 10px;border:1px solid #2a323d;border-radius:8px;background:#1b2028;color:#c9d1d9;cursor:pointer}" +
-      ".ft-opt.sel{border-color:#22d3ee;color:#fff;background:rgba(34,211,238,.08)}" +
+      ".ft-modal{background:#2b3237;border:1px solid #434d54;border-radius:14px;padding:22px;max-width:460px;max-height:86vh;overflow:auto;color:#e6e9ea;font:13px ui-monospace,Menlo,Consolas,monospace}" +
+      ".ft-modal h2{color:#fff;margin:0 0 6px;font-size:18px}.ft-modal h2 b{color:#FFFA00}" +
+      ".ft-modal .sub{color:#9aa4ab;font-size:12px}" +
+      ".ft-modal label{display:block;color:#9aa4ab;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 5px}" +
+      ".ft-modal select,.ft-modal input,.ft-modal textarea{width:100%;background:#323A3F;border:1px solid #434d54;color:#e6e9ea;border-radius:8px;padding:8px 10px;font:inherit}" +
+      ".ft-q{margin:10px 0}.ft-opt{display:block;width:100%;text-align:left;margin:4px 0;padding:8px 10px;border:1px solid #434d54;border-radius:8px;background:#323A3F;color:#e6e9ea;cursor:pointer}" +
+      ".ft-opt.sel{border-color:#FFFA00;color:#fff;background:rgba(255,250,0,.08)}" +
       ".ft-modal .row{display:flex;gap:10px}.ft-modal .row>div{flex:1}" +
       ".ft-act{display:flex;gap:10px;margin-top:16px;align-items:center}.ft-act .sp{flex:1}" +
-      ".ft-btn{cursor:pointer;border-radius:9px;border:1px solid #22d3ee;background:#12303a;color:#22d3ee;font-weight:700;padding:9px 16px}" +
-      ".ft-btn:hover{background:#22d3ee;color:#05140d}.ft-ghost{border:1px solid #2a323d;background:#1b2028;color:#c9d1d9;border-radius:9px;padding:9px 14px;cursor:pointer}" +
-      ".ft-ans{margin-top:10px;background:#1b2028;border-left:2px solid #3ddc97;border-radius:0 8px 8px 0;padding:9px 11px;font-size:12.5px}" +
-      ".ft-ans .chip{color:#3ddc97;font-size:11px}.ft-pill{display:inline-block;font-size:11px;border:1px solid #2a323d;border-radius:999px;padding:2px 9px;margin:3px 4px 0 0;color:#7d8794;cursor:pointer}.ft-pill.on{color:#22d3ee;border-color:#22d3ee}" +
-      ".ft-err{color:#fb7185}.ft-kv{display:grid;grid-template-columns:1fr auto;gap:5px 10px;font-size:12.5px;margin-top:12px}.ft-kv .v{color:#fff;text-align:right}";
+      ".ft-btn{cursor:pointer;border-radius:9px;border:1px solid #FFFA00;background:#3a444b;color:#FFFA00;font-weight:700;padding:9px 16px}" +
+      ".ft-btn:hover{background:#FFFA00;color:#05140d}.ft-ghost{border:1px solid #434d54;background:#323A3F;color:#e6e9ea;border-radius:9px;padding:9px 14px;cursor:pointer}" +
+      ".ft-ans{margin-top:10px;background:#323A3F;border-left:2px solid #5fd68b;border-radius:0 8px 8px 0;padding:9px 11px;font-size:12.5px}" +
+      ".ft-ans .chip{color:#5fd68b;font-size:11px}.ft-pill{display:inline-block;font-size:11px;border:1px solid #434d54;border-radius:999px;padding:2px 9px;margin:3px 4px 0 0;color:#9aa4ab;cursor:pointer}.ft-pill.on{color:#FFFA00;border-color:#FFFA00}" +
+      ".ft-err{color:#ff6b6b}.ft-kv{display:grid;grid-template-columns:1fr auto;gap:5px 10px;font-size:12.5px;margin-top:12px}.ft-kv .v{color:#fff;text-align:right}";
     document.head.appendChild(el("style", null, css));
   }
   function overlay(node) {
@@ -115,7 +115,7 @@
       "<div><label>Occupation</label><select id='ft-occ'><option value='student'>student</option><option value='working'>working</option></select></div></div>" +
       "<div class='row'><div><label>Income band</label><select id='ft-inc'>" + opts(["0-10k","10-30k","30-60k","60k+"]) + "</select></div>" +
       "<div><label>Prior experience</label><select id='ft-exp'><option value='none'>none</option><option value='a_little'>a little</option><option value='active'>active</option></select></div></div>" +
-      "<label>Self-rated risk: <b id='ft-rv' style='color:#22d3ee'>3</b>/5</label><input type='range' id='ft-risk' min='1' max='5' value='3'/>" +
+      "<label>Self-rated risk: <b id='ft-rv' style='color:#FFFA00'>3</b>/5</label><input type='range' id='ft-risk' min='1' max='5' value='3'/>" +
       "<label>Priorities</label><div id='ft-pri'>" + PRIORITIES.map(function (p) { return "<span class='ft-pill' data-p='" + p + "'>" + p.replace("_", " ") + "</span>"; }).join("") + "</div>" +
       "<label>Financial literacy check</label>" + quizHtml(PRE, "pre") +
       "<div class='ft-act'><span id='ft-w' class='sub'></span><div class='sp'></div><button class='ft-btn' id='ft-go'>Save &amp; start playing</button></div>");
