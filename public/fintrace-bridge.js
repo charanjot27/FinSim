@@ -297,10 +297,31 @@
   function round2(n) { return Math.round(n * 100) / 100; }
   function round3(n) { return Math.round(n * 1000) / 1000; }
 
+  // If FinTrace handed us a survey via ?ft=, adopt it and skip asking again.
+  function readHandoff() {
+    try {
+      var raw = new URL(location.href).searchParams.get("ft");
+      if (!raw) return;
+      var h = JSON.parse(decodeURIComponent(raw));
+      if (!h || !h.survey) return;
+      survey = h.survey;
+      quiz.literacy_pre = h.literacy_pre || 0;
+      window.__ftAlias = h.alias || "Player";
+      startPolling();
+      markReady();
+      var note = el("div", { class: "ft-ans", style: "position:fixed;left:14px;bottom:14px;z-index:99999;max-width:320px" },
+        "<b>FinTrace survey received.</b> Play the game, ask Mira, then hit <b>End → FinTrace</b>.");
+      document.body.appendChild(note);
+      setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 9000);
+      // Clean the URL so a refresh doesn't re-import the survey.
+      try { history.replaceState({}, "", location.pathname); } catch (e) { /* ignore */ }
+    } catch (e) { /* no valid handoff */ }
+  }
+
   // Wait until FinSim's singletons exist, then mount.
   function boot() {
     if (!window.portfolio || !window.behavior) { return setTimeout(boot, 500); }
-    style(); bar();
+    style(); bar(); readHandoff();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
   else boot();
