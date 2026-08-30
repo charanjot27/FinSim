@@ -493,46 +493,61 @@
       <h2>Your Portfolio</h2>
       <button class="modal-close" id="portfolio-close">✕</button>
     </div>
-    <div class="modal-body">
-      <div class="portfolio-summary">
-        <div class="summary-card">
-          <div class="summary-label">Cash</div>
-          <div class="summary-value" id="pf-cash">₹10,000</div>
+    <div class="modal-body pf-dash">
+      <div class="pf-kpis">
+        <div class="pf-card">
+          <div class="pf-card-label">Total Value</div>
+          <div class="pf-card-value" id="pf-total">₹10,000</div>
         </div>
-        <div class="summary-card">
-          <div class="summary-label">Holdings Value</div>
-          <div class="summary-value" id="pf-holdings-value">₹0</div>
+        <div class="pf-card">
+          <div class="pf-card-label">Cash</div>
+          <div class="pf-card-value" id="pf-cash">₹10,000</div>
         </div>
-        <div class="summary-card">
-          <div class="summary-label">Total P&L</div>
-          <div class="summary-value" id="pf-pnl">₹0</div>
+        <div class="pf-card">
+          <div class="pf-card-label">Holdings Value</div>
+          <div class="pf-card-value" id="pf-holdings-value">₹0</div>
+        </div>
+        <div class="pf-card">
+          <div class="pf-card-label">Total P&amp;L</div>
+          <div class="pf-card-value" id="pf-pnl">₹0</div>
+        </div>
+        <div class="pf-card">
+          <div class="pf-card-label">Return</div>
+          <div class="pf-card-value" id="pf-return">0.0%</div>
         </div>
       </div>
-      <table class="holdings-table">
-        <thead>
-          <tr>
-            <th>Symbol</th>
-            <th>Qty</th>
-            <th>Avg Price</th>
-            <th>Current</th>
-            <th>P&L</th>
-          </tr>
-        </thead>
-        <tbody id="holdings-body"></tbody>
-      </table>
-      <h3 style="margin-top:24px;">Transaction History</h3>
-      <table class="holdings-table">
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th>Symbol</th>
-            <th>Side</th>
-            <th>Qty</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody id="transactions-body"></tbody>
-      </table>
+
+      <div class="pf-section">
+        <div class="pf-section-title">Holdings</div>
+        <table class="holdings-table">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Qty</th>
+              <th>Avg Price</th>
+              <th>Current</th>
+              <th>P&amp;L</th>
+            </tr>
+          </thead>
+          <tbody id="holdings-body"></tbody>
+        </table>
+      </div>
+
+      <div class="pf-section">
+        <div class="pf-section-title">Transaction History</div>
+        <table class="holdings-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Symbol</th>
+              <th>Side</th>
+              <th>Qty</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="transactions-body"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -594,5 +609,7 @@
   </div>
 
   <script type="module" src="/src/main.ts"></script>
+  <!-- FinTrace bridge: survey + VeriFin mentor + session export. Plain JS, optional. -->
+  <script src="/fintrace-bridge.js" defer></script>
 </body>
 </html>
