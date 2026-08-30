@@ -61,6 +61,12 @@
     m.appendChild(node);
     ov.appendChild(m);
     ov.addEventListener("click", function (e) { if (e.target === ov) document.body.removeChild(ov); });
+    // Keep keystrokes inside the modal: stop them bubbling to FinSim's Phaser
+    // game, which otherwise captures space/arrow keys and eats them, making the
+    // inputs impossible to type in normally.
+    ["keydown", "keyup", "keypress"].forEach(function (type) {
+      ov.addEventListener(type, function (e) { e.stopPropagation(); });
+    });
     document.body.appendChild(ov);
     return ov;
   }
