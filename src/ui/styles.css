@@ -3257,3 +3257,85 @@ html[data-weather="snow"]     .weather-overcast { opacity: 1; }
     transition-duration: .001ms !important;
   }
 }
+
+/* ============================================================
+   Portfolio — clean, simplistic finance-summary dashboard.
+   Scoped to #portfolio-modal so the rest of the game stays dark.
+   ============================================================ */
+#portfolio-modal.modal {
+  background: #f4f6f9;
+  border: 1px solid #d8dde3;
+  box-shadow: 0 24px 70px -20px rgba(16, 24, 40, 0.55);
+}
+#portfolio-modal .modal-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9ee;
+  box-shadow: none;
+}
+#portfolio-modal .modal-header::after { display: none; }
+#portfolio-modal .modal-header h2 {
+  color: #1f2937;
+  text-shadow: none;
+  letter-spacing: 0.4px;
+  font-size: 18px;
+}
+#portfolio-modal .modal-close {
+  background: #eef1f4; color: #5b6675; border: 1px solid #dfe4ea; box-shadow: none;
+}
+#portfolio-modal .modal-close:hover { background: #e2e6ea; color: #1f2937; box-shadow: none; }
+#portfolio-modal .modal-body { padding: 20px 22px; background: #f4f6f9; }
+
+/* KPI cards */
+#portfolio-modal .pf-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+#portfolio-modal .pf-card {
+  background: #ffffff;
+  border: 1px solid #e5e9ee;
+  border-top: 3px solid #2f6fed;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+#portfolio-modal .pf-card:nth-child(1) { border-top-color: #2f6fed; }
+#portfolio-modal .pf-card:nth-child(2) { border-top-color: #17b3a3; }
+#portfolio-modal .pf-card:nth-child(3) { border-top-color: #e8a13a; }
+#portfolio-modal .pf-card:nth-child(4) { border-top-color: #2ea56b; }
+#portfolio-modal .pf-card:nth-child(5) { border-top-color: #8b5cf6; }
+#portfolio-modal .pf-card-label {
+  font-size: 11px; color: #6b7686; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600;
+}
+#portfolio-modal .pf-card-value {
+  font-size: 24px; font-weight: 700; color: #111827; margin-top: 6px; text-shadow: none;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sections */
+#portfolio-modal .pf-section {
+  background: #ffffff;
+  border: 1px solid #e5e9ee;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 14px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+#portfolio-modal .pf-section-title {
+  font-size: 12px; font-weight: 700; color: #374151; text-transform: uppercase;
+  letter-spacing: 0.8px; margin-bottom: 6px;
+}
+
+/* Tables */
+#portfolio-modal .holdings-table { margin-top: 4px; }
+#portfolio-modal .holdings-table th {
+  background: #f5f7fa; color: #6b7686; text-shadow: none; letter-spacing: 0.6px;
+  font-size: 11px; border-bottom: 1px solid #e5e9ee; padding: 9px 10px;
+}
+#portfolio-modal .holdings-table td {
+  color: #1f2937; border-bottom: 1px solid #eef1f4; padding: 10px;
+}
+#portfolio-modal .holdings-table tbody tr:hover { background: #f7f9fb; }
+#portfolio-modal .pnl-positive { color: #1a9d54; text-shadow: none; }
+#portfolio-modal .pnl-negative { color: #d64545; text-shadow: none; }
