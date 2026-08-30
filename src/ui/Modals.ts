@@ -2,6 +2,7 @@ import { portfolio } from '@/systems/PortfolioSystem';
 import { marketEngine } from '@/systems/MarketEngine';
 import { formatCurrency, formatPct } from '@/lib/math';
 import { soundManager } from '@/systems/SoundManager';
+import { behaviorTracker } from '@/systems/BehaviorTracker';
 
 export class PortfolioModal {
   private modal: HTMLElement;
@@ -280,6 +281,14 @@ export class EchoModal {
     const correct = chosenActionId === s.correctActionId;
     const fraudCls = s.isFraud ? 'echo-reveal-fraud' : '';
     soundManager.play(correct ? 'success' : 'error');
+
+    // Log the outcome so the FinTrace bridge can score decision quality.
+    behaviorTracker.log('echo_result', {
+      id: s.id,
+      correct,
+      isFraud: s.isFraud,
+      matchedFraud: s.isFraud && chosenActionId === 'run_the_scam',
+    });
 
     const verdict = correct
       ? `<h3 style="color:#4A9B5E">✓ You matched the winning move!</h3>`
