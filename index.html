@@ -9,6 +9,9 @@
   <title>FinSim — The Financial Metaverse</title>
   <link rel="stylesheet" href="/src/ui/styles.css" />
   <link rel="stylesheet" href="/src/ui/landing.css" />
+  <!-- Embed mode (?embed=1): hide the landing page before first paint; main.ts starts the game. -->
+  <script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add('embed');</script>
+  <style>html.embed #landing-page, html.embed .fin-scroll-progress { display: none !important; } html.embed, html.embed body { overflow: hidden; }</style>
 </head>
 <body>
   <!-- Brass scroll progress bar -->

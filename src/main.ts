@@ -146,7 +146,13 @@ firebaseAuth.subscribe((s) => {
   else leaderboardSystem.cloudTeardown();
 });
 
-if (!userProfile.isOnboarded()) {
+// Embed mode (?embed=1): used when FinSim runs inside another page, e.g. a portfolio card.
+// Skips the landing page, the title menu and onboarding, starts straight in the world,
+// and zooms the camera so the pixel art reads well in a smaller frame.
+const EMBED = new URLSearchParams(window.location.search).has('embed');
+if (EMBED) document.body.classList.add('embed');
+
+if (!userProfile.isOnboarded() && !EMBED) {
 
   window.setTimeout(() => {
     onboarding.open((startTour) => {
@@ -179,8 +185,8 @@ const config: Phaser.Types.Core.GameConfig = {
     },
   },
   scene: [
-    MenuScene,
-    BootScene,
+    // In embed mode the first scene is BootScene, so the title menu is skipped.
+    ...(EMBED ? [BootScene, MenuScene] : [MenuScene, BootScene]),
     ScamSlumScene,
     WallStreetScene,
     DalalStreetScene,
@@ -199,6 +205,7 @@ function startGame() {
   if (landing) landing.classList.add('hidden');
 
   game = new Phaser.Game(config);
+  if (EMBED) applyEmbedZoom(game);
 
   game.registry.set('hudUpdater', (district: string) => {
     hud.setDistrict(district);
@@ -228,6 +235,29 @@ function startGame() {
 }
 
 document.getElementById('btn-play-now')?.addEventListener('click', startGame);
+
+// Scenes whose camera follows the player inside world bounds, so zooming never shows past the edge.
+const FOLLOW_SCENES = new Set([
+  'ScamSlumScene', 'WallStreetScene', 'DalalStreetScene',
+  'CryptoCoveScene', 'QuantQuarterScene', 'VegasViceScene',
+]);
+
+function embedZoom(): number {
+  // ~1.55x in a typical 1100×620 card, up to 2x in larger frames, never below 1.
+  const z = Math.min(window.innerWidth / 700, window.innerHeight / 400);
+  return Math.max(1, Math.min(2, Math.round(z * 100) / 100));
+}
+
+function applyEmbedZoom(g: Phaser.Game): void {
+  const zoomScene = (s: Phaser.Scene) => {
+    if (FOLLOW_SCENES.has(s.scene.key) && s.cameras?.main) s.cameras.main.setZoom(embedZoom());
+  };
+  g.events.once(Phaser.Core.Events.READY, () => {
+    g.scene.scenes.forEach((s) => s.events.on(Phaser.Scenes.Events.CREATE, () => zoomScene(s)));
+  });
+  window.addEventListener('resize', () => g.scene.getScenes(true).forEach(zoomScene));
+}
+
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
@@ -310,3 +340,6 @@ console.log('%c FINSIM ', 'background:#1F3A5F;color:#D4A84B;font-size:20px;paddi
 console.log('%c The Financial Metaverse — 6 Districts, 15 Echo Scenarios, 27 Dialogue Trees ', 'color:#D4A84B;font-size:11px;');
 console.log('Dev: window.finsim.{ goTo(scene), openEcho, openTerminal, unlockAll, reset }');
 console.log('Keys: WASD=move  E/Space=interact  P=portfolio  M=world map  Esc=close');
+
+// Embed mode starts immediately (after window.finsim exists, so its .game handle is set).
+if (EMBED) startGame();
