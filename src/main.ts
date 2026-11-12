@@ -147,7 +147,8 @@ firebaseAuth.subscribe((s) => {
 });
 
 // Embed mode (?embed=1): used when FinSim runs inside another page, e.g. a portfolio card.
-// Skips the landing page, the title menu and onboarding, starts straight in the world,
+// Skips the landing page and onboarding and opens on the game's title scene (what "Play Now"
+// shows), then the world,
 // and zooms the camera so the pixel art reads well in a smaller frame.
 const EMBED = new URLSearchParams(window.location.search).has('embed');
 if (EMBED) document.body.classList.add('embed');
@@ -185,8 +186,8 @@ const config: Phaser.Types.Core.GameConfig = {
     },
   },
   scene: [
-    // In embed mode the first scene is BootScene, so the title menu is skipped.
-    ...(EMBED ? [BootScene, MenuScene] : [MenuScene, BootScene]),
+    MenuScene,
+    BootScene,
     ScamSlumScene,
     WallStreetScene,
     DalalStreetScene,
