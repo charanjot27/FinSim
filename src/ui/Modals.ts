@@ -2,13 +2,16 @@ import { portfolio } from '@/systems/PortfolioSystem';
 import { marketEngine } from '@/systems/MarketEngine';
 import { formatCurrency, formatPct } from '@/lib/math';
 import { soundManager } from '@/systems/SoundManager';
+import { behaviorTracker } from '@/systems/BehaviorTracker';
 
 export class PortfolioModal {
   private modal: HTMLElement;
   private closeBtn: HTMLButtonElement;
+  private totalEl: HTMLElement;
   private cashEl: HTMLElement;
   private holdingsValueEl: HTMLElement;
   private pnlEl: HTMLElement;
+  private returnEl: HTMLElement;
   private holdingsBody: HTMLElement;
   private txBody: HTMLElement;
   private unsubscribe: (() => void) | null = null;
@@ -16,9 +19,11 @@ export class PortfolioModal {
   constructor() {
     this.modal = document.getElementById('portfolio-modal')!;
     this.closeBtn = document.getElementById('portfolio-close') as HTMLButtonElement;
+    this.totalEl = document.getElementById('pf-total')!;
     this.cashEl = document.getElementById('pf-cash')!;
     this.holdingsValueEl = document.getElementById('pf-holdings-value')!;
     this.pnlEl = document.getElementById('pf-pnl')!;
+    this.returnEl = document.getElementById('pf-return')!;
     this.holdingsBody = document.getElementById('holdings-body')!;
     this.txBody = document.getElementById('transactions-body')!;
 
@@ -51,11 +56,17 @@ export class PortfolioModal {
     const cash = portfolio.getCash();
     const holdingsValue = portfolio.getHoldingsValue();
     const pnl = portfolio.getTotalPnl();
+    const totalValue = portfolio.getTotalValue();
+    const invested = portfolio.getState().totalDeposited;
+    const returnPct = invested > 0 ? (pnl / invested) * 100 : 0;
 
+    this.totalEl.textContent = formatCurrency(totalValue);
     this.cashEl.textContent = formatCurrency(cash);
     this.holdingsValueEl.textContent = formatCurrency(holdingsValue);
     this.pnlEl.textContent = formatCurrency(pnl);
-    this.pnlEl.className = `summary-value ${pnl >= 0 ? 'pnl-positive' : 'pnl-negative'}`;
+    this.pnlEl.className = `pf-card-value ${pnl >= 0 ? 'pnl-positive' : 'pnl-negative'}`;
+    this.returnEl.textContent = formatPct(returnPct);
+    this.returnEl.className = `pf-card-value ${pnl >= 0 ? 'pnl-positive' : 'pnl-negative'}`;
 
     const holdings = portfolio.getHoldings();
     this.holdingsBody.innerHTML = '';
@@ -280,6 +291,14 @@ export class EchoModal {
     const correct = chosenActionId === s.correctActionId;
     const fraudCls = s.isFraud ? 'echo-reveal-fraud' : '';
     soundManager.play(correct ? 'success' : 'error');
+
+    // Log the outcome so the FinTrace bridge can score decision quality.
+    behaviorTracker.log('echo_result', {
+      id: s.id,
+      correct,
+      isFraud: s.isFraud,
+      matchedFraud: s.isFraud && chosenActionId === 'run_the_scam',
+    });
 
     const verdict = correct
       ? `<h3 style="color:#4A9B5E">✓ You matched the winning move!</h3>`
